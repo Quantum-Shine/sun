@@ -9,11 +9,11 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(10, 10, 30);
+    background-color: black;
     overflow: hidden;
 }
 
-/* === VIDEO DE FONDO === */
+/* 🎥 VIDEO DE FONDO */
 #backgroundVideo {
     position: fixed;
     top: 0;
@@ -21,20 +21,10 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0; /* detrás de todo */
+    z-index: 0; /* detrás del texto */
 }
 
-/* === CONTENIDO === */
-.stars, .hearts {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
+/* 🌌 CONTENEDOR DE LA CARTA */
 .screen {
     display: flex;
     justify-content: center;
@@ -43,102 +33,72 @@ body {
     text-align: center;
     flex-direction: column;
     position: relative;
-    z-index: 2; /* por encima del video */
+    z-index: 1;
 }
 
+/* 💌 CARTA */
 .notepad {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 3px solid #000000;
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* leve fondo para mejorar lectura */
+    padding: 30px;
     border-radius: 20px;
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     text-align: left;
     font-family:'Comic Sans MS', cursive, sans-serif;
     line-height: 1.6;
-    box-shadow: 8px 8px 15px rgba(0,0,0,0.2);
-    margin: auto;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    animation: fadeIn 2s ease forwards;
 }
 
-.password-img {
-    width: 90%;
-    max-width: 450px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 6px 6px 15px rgba(0,0,0,0.3);
-    display: block;
-    margin: 20px auto;
+/* ✨ Animación suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-h2,h4,p { color: white; }
+/* 🧠 Adaptable a pantallas chicas */
+@media (max-width: 600px) {
+    .notepad {
+        font-size: 16px;
+        padding: 20px;
+    }
+}
 </style>
 </head>
 <body>
 
-<!-- 🎥 VIDEO DE FONDO -->
+<!-- 🎬 VIDEO DE FONDO -->
 <video id="backgroundVideo" autoplay muted loop>
   <source src="fondo.mp4" type="video/mp4">
 </video>
 
-<div class="stars"></div>
-<div class="hearts"></div>
-
-<!-- 🌌 Carta directamente visible -->
+<!-- 💌 CARTA -->
 <div id="notepadScreen" class="screen">
     <div class="notepad">
         <h3>📅 23 Agosto 2025</h3>
         <h4>💌 Mi Constelación Valiente</h4>
-        <p>Abrir esta carta es como entrar a nuestro universo donde solo estamos nosotros, donde el tiempo se detiene y cada momento que compartimos se vuelve cuántico...</p>
-        <p>Tu Lighthouse, tu compañero de universo. Te amo infinito. 🌌✨💗</p>
+        <p>
+            Abrir esta carta es como entrar a nuestro universo donde solo estamos nosotros,
+            donde el tiempo se detiene y cada momento que compartimos se vuelve cuántico.
+            Tus ojos son universos que iluminan mi camino, y tu sonrisa, tu voz, tu energía...
+            todo tu ser es el Sol que irradia magia cuántica. 
+        </p>
+        <p>
+            Desde el primer momento que te vi, sentí algo magnético como si nuestras almas se
+            reconocieran. Gracias por enseñarme que el amor es real, cuántico y eclipsante.
+            Gracias por dejarme entrar en tu mundo, por tu apoyo y tu luz. 
+        </p>
+        <p>
+            Que esta carta sea un abrazo cuántico, un recordatorio de que te llevo en cada pensamiento,
+            en cada latido. Que nuestro universo siga expandiéndose, y que sigamos explorando cada
+            destello, cada sueño que compartimos.
+        </p>
+        <p>
+            Tu Lighthouse, tu compañero de universo. Te amo infinito. 🌌✨💗
+        </p>
     </div>
 </div>
 
-<script>
-/* === EFECTO DE CORAZONES === */
-function crearCorazones(){ 
-    const heartsContainer=document.querySelector('.hearts'); 
-    setInterval(()=>{
-        const heart=document.createElement('div');
-        heart.classList.add('heart'); 
-        heart.textContent='❤';
-        heart.style.left=Math.random()*100+'vw';
-        heart.style.fontSize=(Math.random()*20+10)+'px';
-        heart.style.animationDuration=(Math.random()*5+5)+'s';
-        heart.style.position='absolute';
-        heart.style.top='-10px';
-        heart.style.color='rgba(255,0,0,0.6)';
-        heart.style.zIndex='1';
-        heartsContainer.appendChild(heart);
-        setTimeout(()=>heart.remove(),8000);
-    },500);
-}
-crearCorazones();
-
-/* === EFECTO DE ESTRELLAS === */
-function crearEstrellas(){ 
-    setInterval(()=>{
-        const ancho=window.innerWidth, alto=window.innerHeight;
-        const star=document.createElement('div');
-        star.textContent='★';
-        star.style.position='fixed';
-        star.style.left=Math.random()*ancho+'px';
-        star.style.top='-20px';
-        star.style.color='white';
-        star.style.fontSize=(Math.random()*8+6)+'px';
-        star.style.zIndex=0;
-        document.body.appendChild(star);
-        const duracion=(Math.random()*10+5)*1000;
-        star.animate([
-            {transform:'translateY(0px)',opacity:1},
-            {transform:`translateY(${alto+20}px)`,opacity:0}
-        ],{duration:duracion,easing:'linear'});
-        setTimeout(()=>star.remove(),duracion);
-    },300);
-}
-crearEstrellas();
-</script>
 </body>
 </html>
-
-
