@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carta cuántica secreta</title>
+
 <style>
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: black;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 /* 🎥 VIDEO DE FONDO */
@@ -29,11 +30,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     text-align: center;
     flex-direction: column;
     position: relative;
     z-index: 1;
+    padding: 40px 0;
 }
 
 /* 💌 CARTA */
@@ -44,11 +47,12 @@ body {
     width: 80%;
     max-width: 500px;
     text-align: left;
-    font-family:'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     line-height: 1.5;
     color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
     animation: fadeIn 2s ease forwards;
+    margin-bottom: 60px;
 }
 
 /* ✨ Animación suave */
@@ -66,20 +70,23 @@ body {
         padding: 15px 18px;
         background-color: rgba(0, 0, 0, 0.45);
     }
+
     h3, h4 {
         font-size: 16px;
         text-align: center;
     }
+
     p {
         font-size: 15px;
     }
 }
 </style>
 </head>
+
 <body>
 
 <!-- 🎬 VIDEO DE FONDO -->
-<video id="backgroundVideo" autoplay muted loop>
+<video id="backgroundVideo" autoplay muted loop playsinline>
   <source src="fondo.mp4" type="video/mp4">
 </video>
 
@@ -88,38 +95,41 @@ body {
     <div class="notepad">
         <h3>03 Noviembre 2025</h3>
         <h4>🌌 Carta para mi constelación valiente</h4>
-        <p> Hola corazón 💫 </p>
+
+        <p>Hola corazón 💫</p>
+
         <p>
             Quiero que sepas que te veo, de verdad.
-            Veo tu luz, esa que brilla incluso en los días nublados, y veo cómo luchás y amás con toda tu fuerza: 
-            como mamá galáctica, como mujer, como ser única que transforma todo a su paso. No sos de este universo.
-            Veo cada gesto, cada sonrisa que das, cada sacrificio que hacés por Juli. 
-            Te admiro profundamente y gracias por tanto esfuerzo. 
+            Veo tu luz, esa que brilla incluso en los días nublados, y veo cómo luchás y amás con toda tu fuerza:
+            como mamá galáctica, como mujer, como ser única que transforma todo a su paso.
+            No sos de este universo.
+            Veo cada gesto, cada sonrisa que das, cada sacrificio que hacés por Juli.
+            Te admiro profundamente y gracias por tanto esfuerzo.
         </p>
+
         <p>
-            Creo que estás atravesando una mini tormenta, y quiero que sepas que no necesitas cargarla sola. 
-            Yo estoy acá, sosteniéndote con mi energía, con respeto y con amor. 
+            Creo que estás atravesando una mini tormenta, y quiero que sepas que no necesitás cargarla sola.
+            Yo estoy acá, sosteniéndote con mi energía, con respeto y con amor.
             Incluso si solo te acompaño desde la distancia, nuestros corazones están alineados en nuestro universo cuántico.
         </p>
+
         <p>
             Sos una constelación valiente, creadora de universos Joy, y tu luz nunca deja de brillar.
-            Que hoy te encuentres con momentos de calma, que tu sonrisa y mi energia te abracen un ratito, 
+            Que hoy te encuentres con momentos de calma, que tu sonrisa y mi energía te abracen un ratito,
             y que sientas que cada pequeño paso que das, cada decisión que tomás, es un acto de amor propio y valentía.
-            Que esta semana te regale respiros de paz y momentos de alegría entre todo lo que hacés.  
-            Que cada sonrisa, cada instante de tranquilidad, te recuerden lo poderosa que sos y lo mucho que merecés celebrar tu camino.  
-            Yo estoy acá, celebrando cada paso que das y sosteniéndote en lo que necesites.  
-            Que tu luz siga brillando con fuerza, hoy y siempre, en cada rincón de tu universo.  
-
+            Que esta semana te regale respiros de paz y momentos de alegría entre todo lo que hacés.
+            Que cada sonrisa, cada instante de tranquilidad, te recuerden lo poderosa que sos y lo mucho que merecés celebrar tu camino.
+            Yo estoy acá, celebrando cada paso que das y sosteniéndote en lo que necesites.
+            Que tu luz siga brillando con fuerza, hoy y siempre, en cada rincón de tu universo.
         </p>
+
         <p>
-           Con todo mi amor, mi admiración y me energía cuántica
-           Tu Lighthouse ✨
-           Te amo ❤
+            Con todo mi amor, mi admiración y mi energía cuántica.<br>
+            Tu Lighthouse ✨<br>
+            Te amo ❤
         </p>
     </div>
 </div>
 
 </body>
 </html>
-
-
